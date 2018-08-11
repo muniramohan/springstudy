@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "13dadd4c-cd93-4990-80fe-7fe8284968fd",
+		"name": "showroomApp_Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveProjectDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"projectTitle\": \"SSLIM\",\n    \"creationDate\": \"2018-08-24\",\n    \"status\": \"DONE\",\n    \"descriptionHtml\": \"Shipping software for NVOCC\",\n    \"projectOwner\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/project",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"project"
+					]
+				},
+				"description": "http://localhost:8080/api/project"
+			},
+			"response": []
+		},
+		{
+			"name": "getProjectList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/project/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"project",
+						""
+					]
+				},
+				"description": "http://localhost:8080/api/project/"
+			},
+			"response": []
+		},
+		{
+			"name": "updateProjectDetails",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"projectTitle\": \"SSLIM\",\n    \"creationDate\": \"2018-08-24\",\n    \"status\": \"DONE\",\n    \"descriptionHtml\": \"Shipping software for NVOCC inclusive full scale container tracking\",\n    \"projectOwner\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/project/321",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"project",
+						"321"
+					]
+				},
+				"description": "http://localhost:8080/api/project"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProjectDetails",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"projectTitle\": \"SSLIM\",\n    \"creationDate\": \"2018-08-24\",\n    \"status\": \"DONE\",\n    \"descriptionHtml\": \"Shipping software for NVOCC inclusive full scale container tracking\",\n    \"projectOwner\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/project/321",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"project",
+						"321"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

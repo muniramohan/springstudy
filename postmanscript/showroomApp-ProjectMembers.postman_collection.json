@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "aec6d986-0de5-4d69-973a-2097beb0e372",
+		"name": "showroomApp:ProjectMembers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Projectmemberssave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTMzOTkwMDM1fQ.hx8miOjKjqs2WkRWaE6B22Fng1ExOQG-w3syPakdukjzS-hDMHy1QxOWhD0yBDCVyDyrX4gNHdT5d9bPmTRNCQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"projectID\": \"353\",\n                \"userID\": [\"3\",\"2\",\"4\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/member",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"member"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProjectmembersUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTMzOTkwMDM1fQ.hx8miOjKjqs2WkRWaE6B22Fng1ExOQG-w3syPakdukjzS-hDMHy1QxOWhD0yBDCVyDyrX4gNHdT5d9bPmTRNCQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"projectID\": \"353\",\n                \"userID\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/member",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"member"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProjectmembers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTMzOTkwMDM1fQ.hx8miOjKjqs2WkRWaE6B22Fng1ExOQG-w3syPakdukjzS-hDMHy1QxOWhD0yBDCVyDyrX4gNHdT5d9bPmTRNCQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"projectID\": \"353\"\n                \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/member/353",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"member",
+						"353"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projectmembersdelete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTMzOTkwMDM1fQ.hx8miOjKjqs2WkRWaE6B22Fng1ExOQG-w3syPakdukjzS-hDMHy1QxOWhD0yBDCVyDyrX4gNHdT5d9bPmTRNCQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"projectID\": \"353\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/member",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"member"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
