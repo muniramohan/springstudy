@@ -10,7 +10,12 @@
 			"name": "getUserProfile",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTMzODE5OTY3fQ.MSlewzXtAl3Hhtjf6g9dOGlPkKeEHITtW34ELeAvRUfZ6KjbqyFOduF6SFDJrwjV1tSlfVqSDXmjMvPmk14-9A"
+					}
+				],
 				"body": {},
 				"url": {
 					"raw": "http://localhost:8080/api/userprofile",
@@ -43,7 +48,7 @@
 					"raw": "{\n\t\"email\":\"manu@gtl.com\" , \n\t\"firstName\":\"Manu\" , \n\t\"lastName\":\"RM\",\n\t\"avatarUrl\":null,\n\t\"phoneNumber\":\"123\",\n\t\"salutation\":null,\n\t\"jobTitle\":\"Switch\"\n\t\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/userprofile",
+					"raw": "http://localhost:8080/api/userprofile/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -51,7 +56,8 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"userprofile"
+						"userprofile",
+						""
 					]
 				},
 				"description": "http://localhost:8080/userprofile\nsaving userprofile data"
@@ -109,6 +115,66 @@
 					]
 				},
 				"description": "Delete user profile data"
+			},
+			"response": []
+		},
+		{
+			"name": "saveUserProfileRegistration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"munni@gtl.com\" , \n\t\"firstName\":\"Manu\" , \n\t\"lastName\":\"RM\",\n\t\"avatarUrl\":null,\n\t\"phoneNumber\":\"123\",\n\t\"salutation\":null,\n\t\"jobTitle\":\"Switch\",\n\t\"password\":\"password\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/userprofile/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"userprofile",
+						"sign-up"
+					]
+				},
+				"description": "http://localhost:8080/userprofile\nsaving userprofile data"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\"email\":\"munni@gtl.com\" , \n\t\"password\":\"password\" }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "login users"
 			},
 			"response": []
 		}
