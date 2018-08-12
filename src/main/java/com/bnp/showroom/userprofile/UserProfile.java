@@ -66,21 +66,7 @@ public class UserProfile {
 
 	@Column(name = "ENABLED")
 	//@JsonIgnore
-	private String enabled;
-
-//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "profile")
-//	private List<Rating> rating = new ArrayList<>();
-//
-//	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-//	@JoinTable(name = "USER_PROJECT_LIKES", joinColumns = @JoinColumn(name = "PROFILE_ID", referencedColumnName = "ID"),
-//					inverseJoinColumns = @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID"))
-//	private List<Project> likes = new ArrayList<>();
-//
-//	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-//	@JoinTable(name = "USER_PROJECT_VISITS",
-//					joinColumns = @JoinColumn(name = "PROFILE_ID", referencedColumnName = "ID"),
-//					inverseJoinColumns = @JoinColumn(name = "PROJECT_ID", referencedColumnName = "ID"))
-//	private List<Project> visited = new ArrayList<>();
+	private Boolean enabled = false;
 
 	/**
 	 * @return the id
@@ -203,57 +189,12 @@ public class UserProfile {
 		this.jobTitle = jobTitle;
 	}
 
-	public String getEnabled() {
+	public Boolean getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(String enabled) {
+	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
-
-	//	/**
-//	 * @return the rating
-//	 */
-//	public List<Rating> getRating() {
-//		return rating;
-//	}
-//
-//	/**
-//	 * @param rating
-//	 *            the rating to set
-//	 */
-//	public void setRating(List<Rating> rating) {
-//		this.rating = rating;
-//	}
-//
-//	/**
-//	 * @return the likes
-//	 */
-//	public List<Project> getLikes() {
-//		return likes;
-//	}
-//
-//	/**
-//	 * @param likes
-//	 *            the likes to set
-//	 */
-//	public void setLikes(List<Project> likes) {
-//		this.likes = likes;
-//	}
-//
-//	/**
-//	 * @return the visited
-//	 */
-//	public List<Project> getVisited() {
-//		return visited;
-//	}
-//
-//	/**
-//	 * @param visited
-//	 *            the visited to set
-//	 */
-//	public void setVisited(List<Project> visited) {
-//		this.visited = visited;
-//	}
 
 }
