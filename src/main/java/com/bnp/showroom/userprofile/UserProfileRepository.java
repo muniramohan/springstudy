@@ -19,4 +19,10 @@ public interface UserProfileRepository extends PagingAndSortingRepository<UserPr
 
 	@Query(value = "SELECT * FROM USER_PROFILES WHERE email= ?1", nativeQuery = true)
 	UserProfile findByOnlyEmail(String email);
+
+	@Query(value = "SELECT * FROM USER_PROFILES WHERE VERIFICATION_TOKEN= ?1", nativeQuery = true)
+	UserProfile verifyEmailToken(String token);
+
+	String findByVerificationToken(String emailId);
+
 }

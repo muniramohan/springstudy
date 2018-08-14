@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -39,7 +40,7 @@ public class UserProfile {
 	private String salutation;
 
 	@Column(name = "FIRST_NAME",nullable = false)
-    @Size(min=2, message="Name should have atleast 2 characters")
+	@Size(min=2, message="Name should have atleast 2 characters")
 	private String firstName;
 
 	@Column(name = "LAST_NAME",nullable = false)
@@ -60,13 +61,16 @@ public class UserProfile {
 	@Column(name = "JOB_TITLE")
 	private String jobTitle;
 
-    @Column(name = "PASSWORD")
+	@Column(name = "PASSWORD")
 	//@JsonIgnore
 	private String password;
 
 	@Column(name = "ENABLED")
 	//@JsonIgnore
 	private Boolean enabled = false;
+
+	@Column(name = "VERIFICATION_TOKEN")
+	private String verificationToken = UUID.randomUUID().toString();
 
 	/**
 	 * @return the id
@@ -158,15 +162,15 @@ public class UserProfile {
 		this.email = email;
 	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    /**
+	/**
 	 * @return the phoneNumber
 	 */
 	public Long getPhoneNumber() {
@@ -197,4 +201,11 @@ public class UserProfile {
 		this.enabled = enabled;
 	}
 
+	public String getVerificationToken() {
+		return verificationToken;
+	}
+
+	public void setVerificationToken(String verificationToken) {
+		this.verificationToken = verificationToken;
+	}
 }

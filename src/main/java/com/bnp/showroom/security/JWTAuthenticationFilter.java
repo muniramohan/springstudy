@@ -1,18 +1,10 @@
 package com.bnp.showroom.security;
 
-import com.bnp.showroom.service.UserProfileServiceImpl;
-import com.bnp.showroom.userprofile.UserProfileRepository;
-import com.bnp.showroom.userprofile.UserProfileRepositoryImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import com.bnp.showroom.userprofile.UserProfile;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -38,10 +30,6 @@ import static com.bnp.showroom.security.SecurityConstants.TOKEN_PREFIX;
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
 
-    //private UserProfileRepository userProfileRepository;
-
-   // private UserProfileRepositoryImpl userProfileRepositoryImpl = new UserProfileRepositoryImpl();
-
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
@@ -52,11 +40,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         try {
             UserProfile creds = new ObjectMapper()
                     .readValue(req.getInputStream(), UserProfile.class);
-//            System.out.println("creds :" + creds.getEmail() + "pswd" + creds.getPassword());
-//            Boolean applicationUser = userProfileRepositoryImpl.verifyEmail(creds.getEmail());
-//            if (applicationUser == false) {
-//                throw new DisabledException("User is not active");
-//            }
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             creds.getEmail(),
@@ -73,7 +56,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                             HttpServletResponse res,
                                             FilterChain chain,
                                             Authentication auth) throws IOException, ServletException {
-        System.out.println("success authentication");
         String token = Jwts.builder()
                 .setSubject(((User) auth.getPrincipal()).getUsername())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))

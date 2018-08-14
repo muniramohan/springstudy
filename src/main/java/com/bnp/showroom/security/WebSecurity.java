@@ -33,6 +33,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         System.out.println("#######: ibnside configure"+ SIGN_UP_URL) ;
         http.cors().and().csrf().disable().authorizeRequests()
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
+                .antMatchers(HttpMethod.GET, "/api/userprofile/sign-up/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
@@ -41,11 +42,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
-//    @Override
-//    public void configure(org.springframework.security.config.annotation.web.builders.WebSecurity web) throws Exception {
-//        System.out.println("inside ignoring");
-//        web.ignoring().antMatchers(SIGN_UP_URL);
-//    }
+
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
