@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.CreatedDate;
 import com.bnp.showroom.common.ProjectStatus;
+import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "PROJECTS")
@@ -24,7 +25,7 @@ public class Project {
 	@Column(name = "PROJECT_ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROJECT_ID_SEQ")
 	@SequenceGenerator(name = "PROJECT_ID_SEQ", sequenceName = "PROJECT_ID_SEQ", allocationSize = 1)
-	private long id;
+	private Long id;
 
 	@Column(name = "PROJECT_TITLE" , unique = true)
 	@NotNull
@@ -44,12 +45,16 @@ public class Project {
 	private String descriptionHtml;
 
 	@Column(name = "PROJECT_OWNER")
-	private long projectOwner;
+	private Long projectOwner;
+
+    @Column(name = "RATING_COUNT")
+    @Nullable
+	private Long commentCount;
 
     /**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -57,7 +62,7 @@ public class Project {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -114,12 +119,19 @@ public class Project {
 		this.projectTitle = projectTitle;
 	}
 
-	public long getProjectOwner() {
+	public Long getProjectOwner() {
 		return projectOwner;
 	}
 
-	public void setProjectOwner(long projectOwner) {
+	public void setProjectOwner(Long projectOwner) {
 		this.projectOwner = projectOwner;
 	}
 
+    public Long getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(Long commentCount) {
+        this.commentCount = commentCount;
+    }
 }

@@ -49,22 +49,6 @@ public class UserProfileController {
         return token;
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "{email}")
-//    public ResponseEntity findByEmail(@PathVariable("email") String emailID) {
-//        try {
-//            System.out.println("test");
-//            List result;
-//            result = em.createQuery(
-//                    "SELECT p  FROM UserProfile p WHERE m.enabled = true AND m.email =:email")
-//                    .setParameter("email", emailID)
-//                    .getResultList();
-//            return new ResponseEntity<>(result, HttpStatus.OK);
-//        } catch (Exception ex) {
-//            logger.error(ex.getMessage());
-//            return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
-//        }
-//    }
-
     @RequestMapping(method = RequestMethod.GET, value = "/sign-up/{token}")
     public ResponseEntity verifyEmailToken(@PathVariable("token") String token) {
         try {

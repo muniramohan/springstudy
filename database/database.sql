@@ -31,3 +31,11 @@ go
 Alter Table Project_Members Add Foreign key (Project_ID) References Projects (Project_ID)
 go
 create sequence PROTOTYPE_ID_SEQ start with 1 increment by 1
+go
+Alter Table Projects Add Column PROJECT_OWNER BIGINT
+go
+Alter Table Projects  Add Foreign key (PROJECT_OWNER) References User_Profiles (User_id)
+go
+Alter Table Project_Comments  Add Foreign key (Project_ID) References Projects (Project_ID)
+go
+ALTER TABLE PROJECTS  ALTER COLUMN DESCRIPTION_SHORT RENAME TO PROJECT_TITLE

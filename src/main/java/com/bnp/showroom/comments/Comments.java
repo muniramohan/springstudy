@@ -32,7 +32,7 @@ public class Comments {
 	@Column(name = "COMMENT_ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "COMMENT_ID_SEQ")
 	@SequenceGenerator(name = "COMMENT_ID_SEQ", sequenceName = "COMMENT_ID_SEQ", allocationSize = 1)
-	private long id;
+	private Long id;
 
 	@Column(name = "COMMENT_DESCRIPTION")
 	private String commentDescription;
@@ -43,15 +43,15 @@ public class Comments {
 	private Date creationDate;
 
 	@Column(name = "PROJECT_ID")
-	private long projectId;
+	private Long projectId;
 
     @Column(name = "USER_ID")
-    private long userId;
+    private Long userId;
 
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -59,7 +59,7 @@ public class Comments {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -86,19 +86,19 @@ public class Comments {
 		this.creationDate = creationDate;
 	}
 
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(long projectId) {
+    public void setProjectId(Long projectId) {
         this.projectId = projectId;
     }
 
-    public long getUserID() {
+    public Long getUserID() {
         return userId;
     }
 
-    public void setUserID(long userID) {
+    public void setUserID(Long userID) {
         this.userId = userID;
     }
 }
