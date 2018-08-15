@@ -21,7 +21,7 @@ public class Prototypes {
     @NotNull
     private String title;
 
-    @Column(name="CREATED_DATE")
+    @Column(name="CREATED_DATE", updatable = false)
     @CreationTimestamp
     private Date createdDate;
 

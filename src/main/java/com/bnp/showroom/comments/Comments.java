@@ -1,4 +1,4 @@
-package com.bnp.showroom.entities;
+package com.bnp.showroom.comments;
 
 import java.util.Date;
 
@@ -17,6 +17,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.bnp.showroom.project.Project;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 /**
@@ -24,7 +26,7 @@ import org.springframework.data.annotation.CreatedDate;
  */
 @Entity
 @Table(name = "PROJECT_COMMENTS")
-public class Comment {
+public class Comments {
 
 	@Id
 	@Column(name = "COMMENT_ID")
@@ -35,18 +37,16 @@ public class Comment {
 	@Column(name = "COMMENT_DESCRIPTION")
 	private String commentDescription;
 
-	@CreatedDate
-	@Column(name = "CREATION_DATE")
-	@Temporal(TemporalType.TIMESTAMP)
+
+	@Column(name = "CREATION_DATE", updatable = false)
+    @CreationTimestamp
 	private Date creationDate;
 
-//	@OneToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID", nullable = false)
-//	private UserProfile userProfile;
+	@Column(name = "PROJECT_ID")
+	private long projectId;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.REFRESH })
-	@JoinColumn(name = "PROJECT_ID", referencedColumnName = "PROJECT_ID", nullable = false)
-	private Project project;
+    @Column(name = "USER_ID")
+    private long userId;
 
 	/**
 	 * @return the id
@@ -86,34 +86,19 @@ public class Comment {
 		this.creationDate = creationDate;
 	}
 
-//	/**
-//	 * @return the userProfile
-//	 */
-//	public UserProfile getUserProfile() {
-//		return userProfile;
-//	}
-//
-//	/**
-//	 * @param userProfile
-//	 *            the userProfile to set
-//	 */
-//	public void setUserProfile(UserProfile userProfile) {
-//		this.userProfile = userProfile;
-//	}
+    public long getProjectId() {
+        return projectId;
+    }
 
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
+    public void setProjectId(long projectId) {
+        this.projectId = projectId;
+    }
 
-	/**
-	 * @param project
-	 *            the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
-	}
+    public long getUserID() {
+        return userId;
+    }
 
+    public void setUserID(long userID) {
+        this.userId = userID;
+    }
 }

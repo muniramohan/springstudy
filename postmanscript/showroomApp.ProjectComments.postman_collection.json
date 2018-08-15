@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "f36b2341-7dab-48cf-a93b-cf2ffe84926e",
+		"name": "showroomApp.ProjectComments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getComments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5pQGdlb2ppdC5jb20iLCJleHAiOjE1MzUxNTIwNTd9.T2W2vtoFSn6CVDva0QkZKqiFlyZd_WPcqP_c7shXBCmppg1y6iSEr6SWlKIO5A-Hmioxi45yhdyWkkyGbhCoKw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment"
+					]
+				},
+				"description": "http://localhost:8080/api/comment"
+			},
+			"response": []
+		},
+		{
+			"name": "saveComments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5pQGdlb2ppdC5jb20iLCJleHAiOjE1MzUxNTIwNTd9.T2W2vtoFSn6CVDva0QkZKqiFlyZd_WPcqP_c7shXBCmppg1y6iSEr6SWlKIO5A-Hmioxi45yhdyWkkyGbhCoKw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"commentDescription\":\"this project is good\",\n\t\"projectId\":\"353\",\n\t\"userId\":\"33\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment"
+					]
+				},
+				"description": "http://localhost:8080/api/comment"
+			},
+			"response": []
+		},
+		{
+			"name": "updateComments",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5pQGdlb2ppdC5jb20iLCJleHAiOjE1MzUxNTIwNTd9.T2W2vtoFSn6CVDva0QkZKqiFlyZd_WPcqP_c7shXBCmppg1y6iSEr6SWlKIO5A-Hmioxi45yhdyWkkyGbhCoKw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"commentDescription\":\"this project is good but \",\n\t\"projectId\":\"353\",\n\t\"userID\":\"33\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comment/33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment",
+						"33"
+					]
+				},
+				"description": "http://localhost:8080/api/comment/33"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5pQGdlb2ppdC5jb20iLCJleHAiOjE1MzUxNTIwNTd9.T2W2vtoFSn6CVDva0QkZKqiFlyZd_WPcqP_c7shXBCmppg1y6iSEr6SWlKIO5A-Hmioxi45yhdyWkkyGbhCoKw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/comment/97",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment",
+						"97"
+					]
+				},
+				"description": "http://localhost:8080/api/comment/97"
+			},
+			"response": []
+		}
+	]
+}
