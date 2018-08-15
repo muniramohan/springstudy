@@ -29,3 +29,5 @@ go
 Alter Table Project_Prototypes  Add Foreign key (Project_ID) References Projects (Project_ID)
 go
 Alter Table Project_Members Add Foreign key (Project_ID) References Projects (Project_ID)
+go
+create sequence PROTOTYPE_ID_SEQ start with 1 increment by 1
