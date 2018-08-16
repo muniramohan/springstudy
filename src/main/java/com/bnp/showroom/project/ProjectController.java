@@ -27,10 +27,13 @@ public class ProjectController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public ResponseEntity findAll(){
-        System.out.println("inside project get all");
-        List<Project> results =projectRepository.findAllRecords();
-
-        results.forEach(result -> result.setCommentCount(Long.valueOf(2)));
-        return new ResponseEntity<>(results,HttpStatus.OK);
+        try {
+            System.out.println("inside project get all");
+            List<Project> results =projectRepository.findAllRecords();
+            results.forEach(result -> result.setCommentCount(projectRepository.findCommentCount(result.getId())));
+            return new ResponseEntity<>(results,HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+        }
     }
 }
