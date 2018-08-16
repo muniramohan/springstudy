@@ -10,7 +10,11 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "projects", path = "project")
 public interface ProjectRepository extends PagingAndSortingRepository<Project, Long>  {
-    //Project findByProjectTitle(String projectTitle);
+
     @Query(value = "Select P From Project P")
     List<Project> findAllRecords();
+
+    @Query(value = "Select Count(*) From PROJECT_COMMENTS Where Project_ID = ?1",nativeQuery = true)
+    Long findCommentCount(Long projectID);
+
 }
