@@ -64,8 +64,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<!--<scope>provided</scope> --> <!--for building package-->
+			<!--<scope>provided</scope>  &lt;!&ndash;for building package&ndash;&gt;-->
 		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.1.0.7.0</version>
+</dependency>
 	</dependencies>
 	<build>
 		<plugins>

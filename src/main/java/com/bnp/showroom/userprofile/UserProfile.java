@@ -65,9 +65,9 @@ public class UserProfile {
 	//@JsonIgnore
 	private String password;
 
-	@Column(name = "ENABLED")
+	@Column(name = "PROFILE_ENABLED")
 	//@JsonIgnore
-	private Boolean enabled = false;
+	private String profileEnabled = "FALSE";
 
 	@Column(name = "VERIFICATION_TOKEN")
 	private String verificationToken = UUID.randomUUID().toString();
@@ -193,12 +193,12 @@ public class UserProfile {
 		this.jobTitle = jobTitle;
 	}
 
-	public Boolean getEnabled() {
-		return enabled;
+	public String getEnabled() {
+		return profileEnabled;
 	}
 
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
+	public void setEnabled(String enabled) {
+		this.profileEnabled = enabled;
 	}
 
 	public String getVerificationToken() {

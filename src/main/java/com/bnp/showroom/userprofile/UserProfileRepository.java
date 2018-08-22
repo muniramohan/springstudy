@@ -1,5 +1,6 @@
 package com.bnp.showroom.userprofile;
 
+import com.bnp.showroom.common.QueryConstants;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -14,13 +15,13 @@ import org.springframework.stereotype.Component;
 @RepositoryRestResource(collectionResourceRel = "userprofiles", path = "userprofile")
 public interface UserProfileRepository extends PagingAndSortingRepository<UserProfile, Long> {
 
-	@Query(value = "SELECT * FROM USER_PROFILES WHERE Enabled = true AND email= ?1", nativeQuery = true)
+	@Query(value = QueryConstants.FIND_BY_EMAIL, nativeQuery = true)
 	UserProfile findByEmail(String email);
 
-	@Query(value = "SELECT * FROM USER_PROFILES WHERE email= ?1", nativeQuery = true)
+	@Query(value = QueryConstants.FIND_BY_EMAIL_ONLY, nativeQuery = true)
 	UserProfile findByOnlyEmail(String email);
 
-	@Query(value = "SELECT * FROM USER_PROFILES WHERE VERIFICATION_TOKEN= ?1", nativeQuery = true)
+	@Query(value = QueryConstants.VERIFY_EMAIL_TOKEN, nativeQuery = true)
 	UserProfile verifyEmailToken(String token);
 
 	String findByVerificationToken(String emailId);

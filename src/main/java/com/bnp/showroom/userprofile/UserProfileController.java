@@ -55,7 +55,7 @@ public class UserProfileController {
             System.out.println("inside token");
             UserProfile userProfile = userProfileRepository.verifyEmailToken(token);
             if (userProfile != null) {
-                userProfile.setEnabled(true);
+                userProfile.setEnabled("TRUE");
                 userProfileRepository.save(userProfile);
                 return new ResponseEntity<>("Success", HttpStatus.ACCEPTED);
             }
