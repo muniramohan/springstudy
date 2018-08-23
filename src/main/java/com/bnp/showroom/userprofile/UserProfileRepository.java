@@ -24,6 +24,7 @@ public interface UserProfileRepository extends PagingAndSortingRepository<UserPr
 	@Query(value = QueryConstants.VERIFY_EMAIL_TOKEN, nativeQuery = true)
 	UserProfile verifyEmailToken(String token);
 
+	@Query(value = QueryConstants.VERIFICATION_TOKEN, nativeQuery = true)
 	String findByVerificationToken(String emailId);
 
 }

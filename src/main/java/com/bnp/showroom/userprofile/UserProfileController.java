@@ -40,7 +40,7 @@ public class UserProfileController {
         userProfileRepository.save(user);
         //sending mail to customer for email verification
         String verificationURL = CreateVerificationURL(user.getEmail());
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(verificationURL,HttpStatus.CREATED);
     }
 
     private String CreateVerificationURL(String email) {
