@@ -1,4 +1,4 @@
-package com.bnp.showroom.entities;
+package com.bnp.showroom.updates;
 
 import java.util.Date;
 
@@ -15,8 +15,10 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import com.bnp.showroom.project.Project;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.LastModifiedDate;
 
 /**
@@ -24,7 +26,7 @@ import org.springframework.data.annotation.LastModifiedDate;
  */
 @Entity
 @Table(name = "PROJECT_UPDATES")
-public class ProjectUpdate {
+public class Updates {
 
 	@Id
 	@Column(name = "ID")
@@ -32,17 +34,17 @@ public class ProjectUpdate {
 	@SequenceGenerator(name = "UPDATE_ID_SEQ", sequenceName = "UPDATE_ID_SEQ", allocationSize = 1)
 	private long id;
 
-	@LastModifiedDate
-	@Column(name = "CREATION_DATE")
-	@Temporal(TemporalType.TIMESTAMP)
+
+	@Column(name = "CREATION_DATE", updatable = false)
+	@CreationTimestamp
 	private Date creationDate;
 
 	@Column(name = "DESCRIPTION")
 	private String description;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.REFRESH })
-	@JoinColumn(name = "PROJECT_ID", referencedColumnName = "PROJECT_ID", nullable = false)
-	private Project project;
+	@Column(name="PROJECT_ID")
+	@NotNull
+	private long projectId;
 
 	/**
 	 * @return the id
@@ -89,19 +91,11 @@ public class ProjectUpdate {
 		this.description = description;
 	}
 
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
+	public long getProjectId() {
+		return projectId;
 	}
 
-	/**
-	 * @param project
-	 *            the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
+	public void setProjectId(long projectId) {
+		this.projectId = projectId;
 	}
-
 }

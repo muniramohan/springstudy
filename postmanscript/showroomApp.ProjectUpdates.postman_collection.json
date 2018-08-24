@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "1575deaf-18a6-48c4-85f4-03b12ef0edd5",
+		"name": "showroomApp.ProjectUpdates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveProjectUpdates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1OTY4NjYyfQ.luLvHNY6GIlsWlGtqKYdeqAh3di3vqlROpG-C5Dmc7TpaRFSMtZQRYSCCKCCsfWPPX2EI9GLTM2D-_H8bn6syw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"describ the prototype test\",\n    \"projectId\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/showroomServer/api/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"showroomServer",
+						"api",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProjectUpdates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1OTY4NjYyfQ.luLvHNY6GIlsWlGtqKYdeqAh3di3vqlROpG-C5Dmc7TpaRFSMtZQRYSCCKCCsfWPPX2EI9GLTM2D-_H8bn6syw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/showroomServer/api/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"showroomServer",
+						"api",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProjectUpdates",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1MjIxNzY5fQ.13J38kRPgQMGIY1mZzLKWh3jy76HzUK0fo_PvE4R_8mZ1eaicIUOAZj1RA9dH30h78yFC0f-e9fdif5rJ_6BGw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/prototype/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prototype",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProjectUpdates",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1OTY4NjYyfQ.luLvHNY6GIlsWlGtqKYdeqAh3di3vqlROpG-C5Dmc7TpaRFSMtZQRYSCCKCCsfWPPX2EI9GLTM2D-_H8bn6syw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"describ the prototype test muni\",\n    \"projectId\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/showroomServer/api/update/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"showroomServer",
+						"api",
+						"update",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
