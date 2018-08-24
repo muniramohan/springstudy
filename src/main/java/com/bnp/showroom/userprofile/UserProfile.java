@@ -35,8 +35,9 @@ public class UserProfile {
 	@NotNull
 	private String lastName;
 
-	@Column(name = "AVATAR_URL")
-	private String avatarUrl;
+	@Lob
+	@Column(name = "AVATAR_IMAGE")
+	private byte[] avatarImage;
 
 	@Column(name = "EMAIL",nullable = false)
 	@NotNull
@@ -120,20 +121,14 @@ public class UserProfile {
 		this.lastName = lastName;
 	}
 
-	/**
-	 * @return the avatarUrl
-	 */
-	public String getAvatarUrl() {
-		return avatarUrl;
+	public byte[] getAvatarImage() {
+		return avatarImage;
 	}
 
-	/**
-	 * @param avatarUrl
-	 *            the avatarUrl to set
-	 */
-	public void setAvatarUrl(String avatarUrl) {
-		this.avatarUrl = avatarUrl;
+	public void setAvatarImage(byte[] avatarImage) {
+		this.avatarImage = avatarImage;
 	}
+
 
 	/**
 	 * @return the email

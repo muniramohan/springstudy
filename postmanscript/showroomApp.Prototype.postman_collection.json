@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "304d9486-a275-44cf-9e6e-6c7b35892d57",
+		"name": "showroomApp.Prototype",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPrototype",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1MjIxNzY5fQ.13J38kRPgQMGIY1mZzLKWh3jy76HzUK0fo_PvE4R_8mZ1eaicIUOAZj1RA9dH30h78yFC0f-e9fdif5rJ_6BGw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/prototype",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prototype"
+					]
+				},
+				"description": "http://localhost:8080/api/prototype"
+			},
+			"response": []
+		},
+		{
+			"name": "savePrototype",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1MjIxNzY5fQ.13J38kRPgQMGIY1mZzLKWh3jy76HzUK0fo_PvE4R_8mZ1eaicIUOAZj1RA9dH30h78yFC0f-e9fdif5rJ_6BGw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Clickdummy1\",\n    \"description\": \"describ the prototype\",\n    \"status\": \"DONE\",\n    \"url\": \"http://localhost:8080/api/prototype\",\n    \"projectId\": \"353\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/prototype",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prototype"
+					]
+				},
+				"description": "http://localhost:8080/api/prototype"
+			},
+			"response": []
+		},
+		{
+			"name": "updatePrototype",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1MjIxNzY5fQ.13J38kRPgQMGIY1mZzLKWh3jy76HzUK0fo_PvE4R_8mZ1eaicIUOAZj1RA9dH30h78yFC0f-e9fdif5rJ_6BGw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Clickdummytest\",\n    \"description\": \"describ the prototype\",\n    \"status\": \"DONE\",\n    \"url\": \"http://localhost:8080/api/prototype\",\n    \"projectId\": \"353\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/prototype/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prototype",
+						"2"
+					]
+				},
+				"description": "http://localhost:8080/api/prototype"
+			},
+			"response": []
+		},
+		{
+			"name": "deletePrototype",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtdW5uaUBndGwuY29tIiwiZXhwIjoxNTM1MjIxNzY5fQ.13J38kRPgQMGIY1mZzLKWh3jy76HzUK0fo_PvE4R_8mZ1eaicIUOAZj1RA9dH30h78yFC0f-e9fdif5rJ_6BGw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/prototype/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prototype",
+						"2"
+					]
+				},
+				"description": "http://localhost:8080/api/prototype/2"
+			},
+			"response": []
+		}
+	]
+}
